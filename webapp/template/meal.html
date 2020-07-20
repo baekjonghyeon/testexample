@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta author="Kimyooncheol">
+		<title>{{ schoolname }} 급식</title>
+		<!-- BootStrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<!-- CSS -->
+  </head>
+  <body>
+    <table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">날짜</th>
+					<th scope="col">급식 유형</th>
+					<th scope="col">급식</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for j in range(i) %} 
+					<tr>
+						<th scope="row">{{ meal_date[j] }}</th>
+      			        <td>{{ meal_type[j] }}</td>
+      			        <td>{{ meal[j] }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+  </body>
+</html>
