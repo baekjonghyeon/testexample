@@ -10,23 +10,27 @@
 		<!-- CSS -->
   </head>
   <body>
-    <table class="table">
+	<div class="todaymeal">
+	</div>
+	<div class="mealtable">
+  	<table class="table">
 			<thead class="thead-dark">
 				<tr>
 					<th scope="col">날짜</th>
 					<th scope="col">급식 유형</th>
 					<th scope="col">급식</th>
-				</tr>
+  		  </tr>
 			</thead>
 			<tbody>
 				{% for j in range(i) %} 
-					<tr>
-						<th scope="row">{{ meal_date[j] }}</th>
-      			        <td>{{ meal_type[j] }}</td>
-      			        <td>{{ meal[j] }}</td>
-					</tr>
+				<tr>
+					<th scope="row">{{ meal_date[j] }}</th>
+  		  	<td>{{ meal_type[j] }}</td>
+  		  	<td>{{ meal[j] }}</td>
+				</tr>
 				{% endfor %}
 			</tbody>
 		</table>
-  </body>
+	</div>
+	</body>
 </html>

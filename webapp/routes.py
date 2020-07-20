@@ -38,7 +38,7 @@ def foor():
     SCHUL_NM = request.values.get("SCHUL_NM","error")
     if ATPT_OFCDC_SC_CODE == "error" or SD_SCHUL_CODE == "error":
         return "error300" 
-    url = "https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=05ae7633052e44ca8329ece2812f358a&Type=json&pSize=5&ATPT_OFCDC_SC_CODE="+ATPT_OFCDC_SC_CODE+"&SD_SCHUL_CODE="+SD_SCHUL_CODE+"&MLSV_FROM_YMD="+startDate+"&MLSV_TO_YMD="+endDate
+    url = "https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=05ae7633052e44ca8329ece2812f358a&Type=json&pSize=50&ATPT_OFCDC_SC_CODE="+ATPT_OFCDC_SC_CODE+"&SD_SCHUL_CODE="+SD_SCHUL_CODE+"&MLSV_FROM_YMD="+startDate+"&MLSV_TO_YMD="+endDate
     response = requests.get(url)
     json_respone = json.loads(response.text)
     json_mealServiceDietInfo = json_respone.get("mealServiceDietInfo")
