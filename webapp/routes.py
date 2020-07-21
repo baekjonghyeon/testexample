@@ -6,6 +6,11 @@ import requests
 import datetime
 from webapp import app
 
+"""
+Author 김윤철
+Date 2020.07.21
+"""
+
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'raspberry'
@@ -39,9 +44,8 @@ def index():
 @app.route('/food', methods=['GET'])
 def foor():
     now = datetime.datetime.today()
-    startDates = now + datetime.timedelta(days=1)
     endDates = now + datetime.timedelta(days=4)
-    startDate = startDates.strftime('%Y%m%d')
+    startDate = now.strftime('%Y%m%d')
     endDate = endDates.strftime('%Y%m%d')
     print('ip:'+str(request.environ.get('HTTP_X_REAL_IP', request.remote_addr)),str(startDate)+'-'+str(endDate))
     meal_date = []
